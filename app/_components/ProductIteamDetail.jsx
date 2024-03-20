@@ -10,13 +10,13 @@ import { UpdateCartContext } from "../_context/UpdateCartContext";
 import { getCookie } from "cookies-next";
 
 function ProductIteamDetail({ product, setOpen }) {
-  const jwt = sessionStorage.getItem("jwt");
-  const user = JSON.parse(sessionStorage.getItem("user"));
-  // const jwt = getCookie("jwt");
-  // let user = "";
-  // try {
-  //   user = JSON.parse(getCookie("user"));
-  // } catch (e) {}
+  // const jwt = sessionStorage.getItem("jwt");
+  // const user = JSON.parse(sessionStorage.getItem("user"));
+  const jwt = getCookie("jwt");
+  let user = "";
+  try {
+    user = JSON.parse(getCookie("user"));
+  } catch (e) {}
   const [loading, setLoading] = useState(false);
   const { updatecart, setUpdateCart } = useContext(UpdateCartContext);
 

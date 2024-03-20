@@ -16,12 +16,12 @@ function Checkout() {
   // const cookies=useCookies()
   let user = "";
   try {
-    user = JSON.parse(sessionStorage.getItem("user"));
-    // user = JSON.parse(getCookie("user"));
+    // user = JSON.parse(sessionStorage.getItem("user"));
+    user = JSON.parse(getCookie("user"));
   } catch (e) {}
-  // const jwt = getCookie("jwt");
+  const jwt = getCookie("jwt");
 
-  const jwt = sessionStorage.getItem("jwt");
+  // const jwt = sessionStorage.getItem("jwt");
   const [totalCartItem, setTotalCartItem] = useState(0);
   const [cartItemList, setCartItemList] = useState([]);
   const [subtotal, setSubTotal] = useState(0);

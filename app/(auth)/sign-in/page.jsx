@@ -16,8 +16,8 @@ function SignIn() {
   const [loader, setLoader] = useState();
   const router = useRouter();
   useEffect(() => {
-    // const jwt = getCookie("jwt");
-    const jwt = sessionStorage.getItem("jwt");
+    const jwt = getCookie("jwt");
+    // const jwt = sessionStorage.getItem("jwt");
     if (jwt) {
       router.push("/");
     }
@@ -29,10 +29,10 @@ function SignIn() {
       (res) => {
         console.log(res.data.user);
         console.log(res.data.jwt);
-        // setCookie("user", JSON.stringify(res.data.user));
-        // setCookie("jwt", res.data.jwt);
-        sessionStorage.setItem("user", JSON.stringify(res.data.user));
-        sessionStorage.setItem("jwt", res.data.jwt);
+        setCookie("user", JSON.stringify(res.data.user));
+        setCookie("jwt", res.data.jwt);
+        // sessionStorage.setItem("user", JSON.stringify(res.data.user));
+        // sessionStorage.setItem("jwt", res.data.jwt);
         router.push("/");
         toast("Sign In Successfully");
         setLoader(false);

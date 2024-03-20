@@ -18,8 +18,8 @@ function CreateAccount() {
   const [loader, setLoader] = useState();
   const router = useRouter();
   useEffect(() => {
-    const jwt = sessionStorage.getItem("jwt");
-    // const jwt = setCookie("jwt");
+    // const jwt = sessionStorage.getItem("jwt");
+    const jwt = setCookie("jwt");
     if (jwt) {
       router.push("/");
     }
@@ -32,10 +32,10 @@ function CreateAccount() {
         // console.log(res);
         console.log(res.data.user);
         console.log(res.data.jwt);
-        sessionStorage.setItem("user", JSON.stringify(res.data.user));
-        sessionStorage.setItem("jwt", res.data.jwt);
-        // setCookie("user", JSON.stringify(res.data.user));
-        // setCookie("jwt", res.data.jwt);
+        // sessionStorage.setItem("user", JSON.stringify(res.data.user));
+        // sessionStorage.setItem("jwt", res.data.jwt);
+        setCookie("user", JSON.stringify(res.data.user));
+        setCookie("jwt", res.data.jwt);
         router.push("/");
         toast("Account Created Successfully");
         setLoader(false);

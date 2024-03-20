@@ -36,15 +36,15 @@ import { deleteCookie, getCookie } from "cookies-next";
 
 function Header() {
   const [categoryList, setCategoryList] = useState([]);
-  const isLogin = sessionStorage.getItem("jwt") ? true : false;
-  // const isLogin = getCookie("jwt") ? true : false;
-  const jwt = sessionStorage.getItem("jwt");
-  // let user = "";
-  // try {
-  //   user = JSON.parse(getCookie("user"));
-  // } catch (e) {}
-  // const jwt = getCookie("jwt");
-  const user = JSON.parse(sessionStorage.getItem("user"));
+  // const isLogin = sessionStorage.getItem("jwt") ? true : false;
+  const isLogin = getCookie("jwt") ? true : false;
+  // const jwt = sessionStorage.getItem("jwt");
+  let user = "";
+  try {
+    user = JSON.parse(getCookie("user"));
+  } catch (e) {}
+  const jwt = getCookie("jwt");
+  // const user = JSON.parse(sessionStorage.getItem("user"));
   const [totalCartItem, setTotalCartItem] = useState(0);
   const router = useRouter();
   const { updatecart, setUpdateCart } = useContext(UpdateCartContext);
@@ -72,9 +72,9 @@ function Header() {
   };
 
   const onSignOut = () => {
-    sessionStorage.clear();
-    // deleteCookie("jwt");
-    // deleteCookie("user");
+    // sessionStorage.clear();
+    deleteCookie("jwt");
+    deleteCookie("user");
     router.push("/sign-in");
   };
 

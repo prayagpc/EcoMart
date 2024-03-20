@@ -13,14 +13,14 @@ import { getCookie } from "cookies-next";
 
 function MyOrder() {
   const router = useRouter();
-  // let user = "";
-  // try {
-  //   user = JSON.parse(getCookie("user"));
-  // } catch (e) {}
-  const user = JSON.parse(sessionStorage.getItem("user"));
-  // const jwt = getCookie("jwt");
+  let user = "";
+  try {
+    user = JSON.parse(getCookie("user"));
+  } catch (e) {}
+  // const user = JSON.parse(sessionStorage.getItem("user"));
+  const jwt = getCookie("jwt");
 
-  const jwt = sessionStorage.getItem("jwt");
+  // const jwt = sessionStorage.getItem("jwt");
   const [orderList, setOrderList] = useState([]);
   useEffect(() => {
     if (!jwt) {
