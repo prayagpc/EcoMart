@@ -47,7 +47,7 @@ function Checkout() {
    */
   const getCartItems = async () => {
     const cartItemList_ = await GlobalApi.getCartItem(user?.id, jwt);
-    console.log(cartItemList_);
+    // console.log(cartItemList_);
     setTotalCartItem(cartItemList_?.length);
     setCartItemList(cartItemList_);
   };
@@ -69,7 +69,7 @@ function Checkout() {
   //   };
 
   const onApprove = (data) => {
-    console.log(data);
+    // console.log(data);
 
     const payload = {
       data: {
@@ -86,7 +86,7 @@ function Checkout() {
     };
 
     GlobalApi.createOrder(payload, jwt).then((res) => {
-      console.log(res);
+      // console.log(res);
       toast("Order Places Successfully!");
       cartItemList.forEach((item, index) => {
         GlobalApi.deleteCartitem(item.id, jwt).then((res) => {});

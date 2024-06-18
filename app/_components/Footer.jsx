@@ -9,8 +9,7 @@ function Footer() {
           <Image src={"./logo.png"} width={200} height={200} alt="logo" />
         </div>
         <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-          consequuntur amet culpa cum itaque neque.
+        Your one-stop solution for all your grocery needs. We provide fresh and organic products delivered straight to your doorstep. Shop smart, shop EcoMart.
         </p>
 
         <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">

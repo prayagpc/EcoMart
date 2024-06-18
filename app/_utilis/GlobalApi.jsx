@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "https://ecomart-admin.onrender.com/api",
+  baseURL: `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/api`,
 });
 
 const getCategory = () => axiosClient.get("/categories?populate=*");

@@ -31,7 +31,7 @@ function MyOrder() {
 
   const getMyOrder = async () => {
     const orderLst = await GlobalApi.getMyOrder(user.id, jwt);
-    console.log(orderLst);
+    // console.log(orderLst);
     setOrderList(orderLst);
   };
 

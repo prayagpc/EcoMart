@@ -45,7 +45,7 @@ function ProductIteamDetail({ product, setOpen }) {
     };
     GlobalApi.addTocart(data, jwt).then(
       (res) => {
-        console.log(res);
+        // console.log(res);
         toast("Added to Cart");
         setUpdateCart(!updatecart);
         setLoading(false);

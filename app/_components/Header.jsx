@@ -66,7 +66,7 @@ function Header() {
 
   const getCartItem = async () => {
     const cartItemlist = await GlobalApi.getCartItem(user.id, jwt);
-    console.log(cartItemlist);
+    // console.log(cartItemlist);
     setTotalCartItem(cartItemlist?.length);
     setCartitemList(cartItemlist);
   };
